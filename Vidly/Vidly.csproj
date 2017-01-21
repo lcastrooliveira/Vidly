@@ -239,9 +239,26 @@
     <Compile Include="Migrations\201701211521157_NullableBirthdate.Designer.cs">
       <DependentUpon>201701211521157_NullableBirthdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701211537217_AddMovieGenre.cs" />
+    <Compile Include="Migrations\201701211537217_AddMovieGenre.Designer.cs">
+      <DependentUpon>201701211537217_AddMovieGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211545104_AddNewMovieProps.cs" />
+    <Compile Include="Migrations\201701211545104_AddNewMovieProps.Designer.cs">
+      <DependentUpon>201701211545104_AddNewMovieProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211546108_PopulateGenres.cs" />
+    <Compile Include="Migrations\201701211546108_PopulateGenres.Designer.cs">
+      <DependentUpon>201701211546108_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701211610346_AddReleaseDateToMovie.cs" />
+    <Compile Include="Migrations\201701211610346_AddReleaseDateToMovie.Designer.cs">
+      <DependentUpon>201701211610346_AddReleaseDateToMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -316,6 +333,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -355,6 +373,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701211521157_NullableBirthdate.resx">
       <DependentUpon>201701211521157_NullableBirthdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211537217_AddMovieGenre.resx">
+      <DependentUpon>201701211537217_AddMovieGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211545104_AddNewMovieProps.resx">
+      <DependentUpon>201701211545104_AddNewMovieProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211546108_PopulateGenres.resx">
+      <DependentUpon>201701211546108_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701211610346_AddReleaseDateToMovie.resx">
+      <DependentUpon>201701211610346_AddReleaseDateToMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

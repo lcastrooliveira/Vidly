@@ -5,45 +5,36 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
-        public ActionResult Random()
+        private ApplicationDbContext _context;
+        public MoviesController()
         {
-            var movie = new Movie() { Name = "Shrek!" };
-            var customers = new List<Customer>
-            {
-                new Models.Customer { Name = "Customer 1" },
-                new Models.Customer { Name = "Customer 2" }
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-            return View(viewModel);
+            _context = new ApplicationDbContext();
         }
-        
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         public ActionResult Index()
         {
-            var movies = new List<Movie>()
-            {
-                new Movie() { Name="Shrek" },
-                new Movie() { Name="Wall-e" }
-            };
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
             return View(movies);
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{4})}")]
-        public ActionResult ByReleaseDate(int year, int month)
+        [Route("Movies/Details/{id}")]
+        public ActionResult Details(int id)
         {
-            return Content(year+"/"+month);
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+            if (movie == null)
+                return HttpNotFound();
+            else
+                return View(movie);
         }
     }
 }
