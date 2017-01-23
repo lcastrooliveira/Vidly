@@ -22,6 +22,8 @@ namespace Vidly.Dtos
         [Range(0, 20, ErrorMessage = "Stock must be between 0 and 20")]
         public int NumberInStock { get; set; }
 
+        public GenreDto Genre { get; set; }
+
         [Required(ErrorMessage = "Please Choose a Genre")]
         public int GenreId { get; set; }
     }
